@@ -12,7 +12,6 @@ var scenes;
 (function (scenes) {
     var Menu = /** @class */ (function (_super) {
         __extends(Menu, _super);
-        //private _ocean: objects.Ocean;
         // constructors
         function Menu() {
             var _this = _super.call(this) || this;
@@ -23,12 +22,18 @@ var scenes;
         // public methods
         Menu.prototype.Start = function () {
             //this._ocean = new objects.Ocean();
-            this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Dock51", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
-            //    this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
+            //this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Dock51", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
+            this._gameNameLabel = new objects.Label("Space Shooter", "70px", "Arial", "#FFF000", 400, 100, true);
+            this._background = new objects.Background();
+            this._singlePlayer = new objects.Label("Single Player", "50px", "Arial", "#FFF000", 400, 200, true);
+            this._levelLabel = new objects.Label("Level 1", "70px", "Arial", "#FFF000", 400, 300, true);
+            this._playButton = new objects.Button("PlayButton", 200, 450, true);
+            this._instructionButton = new objects.Button("InstructionButton", 400, 450, true);
+            this._exitButton = new objects.Button("ExitButton", 600, 450, true);
             this.Main();
         };
         Menu.prototype.Update = function () {
-            //this._ocean.Update();
+            this._background.Update();
         };
         Menu.prototype.Reset = function () {
         };
@@ -38,13 +43,17 @@ var scenes;
         Menu.prototype.Main = function () {
             console.log("Starting - START SCENE");
             //this.addChild(this._ocean);
-            this.addChild(this._welcomeLabel);
-            /*  this.addChild(this._startButton);
-  
-              this._startButton.on("click", function(){
-                  managers.Game.CurrentState = config.Scene.GAMEPLAY;
-              }, this);
-          */
+            this.addChild(this._background);
+            this.addChild(this._gameNameLabel);
+            this.addChild(this._singlePlayer);
+            this.addChild(this._levelLabel);
+            this.addChild(this._playButton);
+            this.addChild(this._instructionButton);
+            this.addChild(this._exitButton);
+            this.addChild(this._instructionButton);
+            this._instructionButton.on("click", function () {
+                managers.Game.CurrentState = config.Scene.INSTRUCTIONS;
+            }, this);
         };
         return Menu;
     }(objects.Scene));

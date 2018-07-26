@@ -12,7 +12,13 @@
     
     let Manifest = [
         {id: "bullet", src:"/Assets/audio/bullet.mp3"},
-        {id: "StartButton", src:"/Assets/images/StartButton.png"}
+        {id: "StartButton", src:"/Assets/images/StartButton.png"},
+        {id: "BackGround", src:"/Assets/images/background.jpg"},
+        {id: "PlayButton", src:"/Assets/images/play.png"},
+        {id: "InstructionButton", src:"/Assets/images/instructions.png"},
+        {id: "ExitButton", src:"/Assets/images/exit.png"},
+        {id: "BackButton", src:"/Assets/images/back.png"}
+        
     ]
 
     
@@ -86,6 +92,10 @@
 
             case config.Scene.GAMEOVER:
             CurrentScene = new scenes.GameOver();
+            break;
+
+            case config.Scene.INSTRUCTIONS:
+            CurrentScene = new scenes.Instructions();
             break;
         }
         managers.Game.CurrentScene = CurrentScene;
