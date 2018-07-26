@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/bhalla1993/SpaceShootingGame/issues"
   },
-  "homepage": "https://github.com/bhalla1993/SpaceShootingGame#readme"
+  "homepage": "https://github.com/bhalla1993/SpaceShootingGame#readme",
+  "devDependencies": {
+    "@types/easeljs": "^1.0.0"
+  }
 }
