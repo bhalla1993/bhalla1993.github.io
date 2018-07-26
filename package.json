@@ -1,0 +1,19 @@
+{
+  "name": "spaceshootinggame",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhalla1993/SpaceShootingGame.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhalla1993/SpaceShootingGame/issues"
+  },
+  "homepage": "https://github.com/bhalla1993/SpaceShootingGame#readme"
+}
