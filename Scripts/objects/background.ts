@@ -32,7 +32,7 @@ module objects{
     }
 
     public Reset(): void {
-        this.y = -200;
+        this.y = -605;
 
     }
   }

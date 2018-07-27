@@ -34,7 +34,7 @@ var objects;
             this._checkBounds();
         };
         Background.prototype.Reset = function () {
-            this.y = -200;
+            this.y = -605;
         };
         return Background;
     }(createjs.Bitmap));

@@ -3,9 +3,10 @@ namespace objects {
       // member variables
       private _verticalSpeed: number;
       private _horizontalSpeed: number;
- 
-      constructor(assetManager: createjs.LoadQueue) {
-        super(assetManager, "EnemyImg");
+      public   counter:number=0;
+
+      constructor(assetManager: createjs.LoadQueue,imageString:string) {
+        super(assetManager, imageString);
         this.Start();       
     }
 
@@ -29,8 +30,8 @@ namespace objects {
       public Start(): void {
         //this.regX = this.halfWidth;
         //this.regY = this.halfHeight;
-        this.scaleX=0.05;
-        this.scaleY=0.05;
+        this.scaleX=0.2;
+        this.scaleY=0.2;
         this.Reset();
       }
   

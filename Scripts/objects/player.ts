@@ -1,11 +1,13 @@
 namespace objects {
     export class Player extends objects.GameObject {
-      private _bullet:objects.Bullet;
-
+      private _bulletNumber:number;
       public count:number=0;
+      public static counter:number=0;
+
       constructor(assetManager: createjs.LoadQueue) {
-        super(assetManager, "PlayerImg");
+        super(assetManager, "PlayerImg");        
         this.Start();
+
        
     }
 
@@ -34,6 +36,7 @@ namespace objects {
         this.scaleY=0.15;
         this.halfWidth=460;
         this.y = 460;     
+      
       }
   
       public Update(): void {
@@ -54,9 +57,12 @@ namespace objects {
         if (objects.Game.keyboardManager.moveRight) { this.x += 20; }
 
         if(objects.Game.keyboardManager.jump){
-         
-          //this.y -= 5; 
-      }
+          
+
+
+
+
+        }
     }
     }
   }

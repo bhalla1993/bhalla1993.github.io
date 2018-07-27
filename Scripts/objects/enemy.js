@@ -12,8 +12,9 @@ var objects;
 (function (objects) {
     var Enemy = /** @class */ (function (_super) {
         __extends(Enemy, _super);
-        function Enemy(assetManager) {
-            var _this = _super.call(this, assetManager, "EnemyImg") || this;
+        function Enemy(assetManager, imageString) {
+            var _this = _super.call(this, assetManager, imageString) || this;
+            _this.counter = 0;
             _this.Start();
             return _this;
         }
@@ -34,8 +35,8 @@ var objects;
         Enemy.prototype.Start = function () {
             //this.regX = this.halfWidth;
             //this.regY = this.halfHeight;
-            this.scaleX = 0.05;
-            this.scaleY = 0.05;
+            this.scaleX = 0.2;
+            this.scaleY = 0.2;
             this.Reset();
         };
         Enemy.prototype.Update = function () {

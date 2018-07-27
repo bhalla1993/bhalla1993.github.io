@@ -55,9 +55,9 @@ var objects;
                 this.x += 20;
             }
             if (objects.Game.keyboardManager.jump) {
-                //this.y -= 5; 
             }
         };
+        Player.counter = 0;
         return Player;
     }(objects.GameObject));
     objects.Player = Player;

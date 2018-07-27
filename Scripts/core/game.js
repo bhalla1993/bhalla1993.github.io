@@ -13,13 +13,15 @@
         { id: "Bullet", src: "/Assets/audio/bullet.mp3" },
         { id: "GameMusic", src: "/Assets/audio/backgroundMusic.wav" },
         { id: "StartButton", src: "/Assets/images/StartButton.png" },
-        { id: "BackGround", src: "/Assets/images/background.jpg" },
+        { id: "BackGround", src: "/Assets/images/background.png" },
         { id: "PlayButton", src: "/Assets/images/play.png" },
         { id: "InstructionButton", src: "/Assets/images/instructions.png" },
         { id: "ExitButton", src: "/Assets/images/exit.png" },
         { id: "BackButton", src: "/Assets/images/back.png" },
         { id: "BulletImg", src: "/Assets/images/bullet.png" },
-        { id: "EnemyImg", src: "/Assets/images/enemy.png" },
+        { id: "EnemyImg0", src: "/Assets/images/enemy0.png" },
+        { id: "EnemyImg1", src: "/Assets/images/enemy1.png" },
+        { id: "EnemyImg2", src: "/Assets/images/enemy2.png" },
         { id: "PlayerImg", src: "/Assets/images/player.png" }
     ];
     function Init() {
