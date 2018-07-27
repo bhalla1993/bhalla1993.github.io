@@ -8,6 +8,7 @@
     var CurrentScene;
     var CurrentState;
     var TextureAtlas;
+    var keyboardManager;
     var Manifest = [
         { id: "Bullet", src: "/Assets/audio/bullet.mp3" },
         { id: "GameMusic", src: "/Assets/audio/backgroundMusic.wav" },
@@ -46,6 +47,8 @@
         //managers.Game.TextureAtlas = TextureAtlas;
         //stats = new Stats();
         //SetupStats();
+        keyboardManager = new managers.Keyboard;
+        objects.Game.keyboardManager = keyboardManager;
         // This is where all the magic happens
         Main();
     }

@@ -3,7 +3,6 @@ namespace objects {
       
     constructor() {
         super("PlayerImg");
-  
         this.Start();
       }
   
@@ -22,20 +21,33 @@ namespace objects {
   
       // public methods
       public Start(): void {
-          //this.scaleX=300;
-          //this.scaleY=300;
-          this.regX = this.halfWidth;
-          this.regY = this.halfHeight;
-          this.y = 200;
-          
+
+
+        //  this.regX = 100;
+        //  this.regY = 100;
+          this.scaleX=0.15;
+          this.scaleY=0.15;
+          this.y = 420;          
       }
   
       public Update(): void {
-          this.x = managers.Game.Stage.mouseX;
+          //this.x = managers.Game.Stage.mouseX;
+          this.Move();
           this._checkBounds();
       }
   
       public Reset(): void {}
+      
+      public Move(): void {          
+        console.log("move left : " + objects.Game.keyboardManager.moveLeft);
+
+        //Keyboard Controls
+        if (objects.Game.keyboardManager.moveLeft) { this.x -= 5; }
+
+        if (objects.Game.keyboardManager.moveRight) { this.x += 5; }
+
+
+    }
     }
   }
   

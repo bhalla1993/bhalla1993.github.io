@@ -36,5 +36,8 @@ module objects {
         public Reset():void {
 
         }
+        public Move():void{
+
+        }
     }
 }

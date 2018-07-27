@@ -9,6 +9,8 @@
     let CurrentState: config.Scene;
     let TextureAtlas: createjs.SpriteSheet;
     
+    let keyboardManager:managers.Keyboard;
+    
     
     let Manifest = [
         {id: "Bullet", src:"/Assets/audio/bullet.mp3"},
@@ -60,7 +62,10 @@
 
         //stats = new Stats();
         //SetupStats();
+        keyboardManager=new managers.Keyboard;
+        objects.Game.keyboardManager=keyboardManager;
 
+        
         // This is where all the magic happens
         Main();
     }
