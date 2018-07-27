@@ -23,7 +23,7 @@ var scenes;
         GameOver.prototype.Start = function () {
             this.gameSound = createjs.Sound.play("GameMusic");
             this.gameSound.loop = -1;
-            this.gameSound.volume = 0.1;
+            this.gameSound.volume = 0;
             this._gameNameLabel = new objects.Label("Game Over", "70px", "Arial", "#FFF000", 400, 100, true);
             this._background = new objects.Background();
             this._exitButton = new objects.Button("ExitButton", 600, 450, true);

@@ -25,7 +25,7 @@ namespace objects {
         if(this.count==0)
         {
           this.x = this.halfWidth
-        this.count++;
+          this.count++;
         }
 
       }

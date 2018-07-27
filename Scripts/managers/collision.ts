@@ -13,6 +13,7 @@ namespace managers {
             object2.isColliding = true;
             managers.Game.ScoreBoard.Score += 100;
             managers.Game.ScoreBoard.Lives -= 1;
+            object2.visible=false;
               /*switch(object2.name) {
                   case "island":
                   let yaySound = createjs.Sound.play("yay");
