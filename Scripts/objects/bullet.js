@@ -47,12 +47,6 @@ var objects;
         };
         Bullet.prototype.Reset = function () { };
         Bullet.prototype.Move = function () {
-            /*
-            console.log("move left : " + objects.Game.keyboardManager.moveLeft);
-            console.log("move right : " + objects.Game.keyboardManager.moveRight);
-            console.log("move up : " + objects.Game.keyboardManager.moveForward);
-            console.log("move down : " + objects.Game.keyboardManager.moveBackward);
-            */
             //Keyboard Controls
             if (objects.Game.keyboardManager.moveLeft) {
                 this.x -= 20;

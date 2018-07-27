@@ -15,6 +15,7 @@ var scenes;
         // constructors
         function GamePlay(assetManager) {
             var _this = _super.call(this, assetManager) || this;
+            _this._bulletsNum = 100000;
             _this.Start();
             return _this;
         }
@@ -25,6 +26,12 @@ var scenes;
                 //this._clouds[count] = new objects.Cloud();
             }
         };
+        GamePlay.prototype._buildBullets = function () {
+            for (var count = 0; count < this._bulletsNum; count++) {
+                this._bullets.push(new objects.Bullet(this.assetManager));
+                //this._clouds[count] = new objects.Cloud();
+            }
+        };
         // public methods
         GamePlay.prototype.Start = function () {
             this.gameSound = createjs.Sound.play("Bullet");
@@ -32,17 +39,19 @@ var scenes;
             this.gameSound.volume = 0.0;
             this._background = new objects.Background();
             this._player = new objects.Player(this.assetManager);
-            this._bullet = new objects.Bullet(this.assetManager);
+            //this._bullet=new objects.Bullet(this.assetManager);
             // creates an empty array of type Cloud
             this._enemies = new Array();
             this._enemyNum = 3;
+            this._bullets = new Array();
+            this._bulletsNum = 100000;
             this._buildEnemies();
+            this._buildBullets();
             this.Main();
         };
         GamePlay.prototype.Update = function () {
             this._background.Update();
             this._player.Update();
-            this._bullet.Update();
             this._enemies.forEach(function (enemy) {
                 enemy.Update();
             });

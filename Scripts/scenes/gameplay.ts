@@ -6,6 +6,9 @@ module scenes {
         private _player:objects.Player;
         private _bullet:objects.Bullet;
         private _enemies:objects.Enemy[];
+        private _bullets:objects.Bullet[];
+        private _bulletsNum:number=100000;
+
         private _enemyNum:number;
 
 
@@ -22,6 +25,12 @@ module scenes {
                 //this._clouds[count] = new objects.Cloud();
             }
         }
+        private _buildBullets():void {
+            for (let count = 0; count < this._bulletsNum; count++) {
+                this._bullets.push(new objects.Bullet(this.assetManager));
+                //this._clouds[count] = new objects.Cloud();
+            }
+        }
 
         // public methods
         public Start():void {
@@ -33,12 +42,18 @@ module scenes {
 
             this._background = new objects.Background();
             this._player=new objects.Player(this.assetManager);
-            this._bullet=new objects.Bullet(this.assetManager);
+            //this._bullet=new objects.Bullet(this.assetManager);
              // creates an empty array of type Cloud
              this._enemies = new Array<objects.Enemy>();
              this._enemyNum = 3;
  
+             this._bullets = new Array<objects.Bullet>();
+             this._bulletsNum = 100000;
+ 
+
              this._buildEnemies();
+             this._buildBullets();
+
              
             
             this.Main();
@@ -47,7 +62,6 @@ module scenes {
         public Update():void {
             this._background.Update();
             this._player.Update();
-            this._bullet.Update();
             this._enemies.forEach(enemy => {
                 enemy.Update();
             });

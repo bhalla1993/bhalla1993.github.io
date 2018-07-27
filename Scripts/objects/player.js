@@ -47,19 +47,15 @@ var objects;
         };
         Player.prototype.Reset = function () { };
         Player.prototype.Move = function () {
-            /*
-            console.log("move left : " + objects.Game.keyboardManager.moveLeft);
-            console.log("move right : " + objects.Game.keyboardManager.moveRight);
-            console.log("move up : " + objects.Game.keyboardManager.moveForward);
-            console.log("move down : " + objects.Game.keyboardManager.moveBackward);
-            */
             //Keyboard Controls
             if (objects.Game.keyboardManager.moveLeft) {
-                alert("inside jump");
                 this.x -= 20;
             }
             if (objects.Game.keyboardManager.moveRight) {
                 this.x += 20;
+            }
+            if (objects.Game.keyboardManager.jump) {
+                //this.y -= 5; 
             }
         };
         return Player;
