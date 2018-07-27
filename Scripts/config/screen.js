@@ -3,9 +3,9 @@ var config;
     var Screen = /** @class */ (function () {
         function Screen() {
         }
-        Screen.WIDTH = 640;
-        Screen.HEIGHT = 480;
-        Screen.HALF_WIDTH = 320;
+        Screen.WIDTH = 925;
+        Screen.HEIGHT = 450;
+        Screen.HALF_WIDTH = 480;
         Screen.HALF_HEIGHT = 240;
         return Screen;
     }());

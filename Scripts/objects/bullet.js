@@ -10,16 +10,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Player = /** @class */ (function (_super) {
-        __extends(Player, _super);
-        function Player(assetManager) {
-            var _this = _super.call(this, assetManager, "PlayerImg") || this;
+    var Bullet = /** @class */ (function (_super) {
+        __extends(Bullet, _super);
+        function Bullet(assetManager) {
+            var _this = _super.call(this, assetManager, "BulletImg") || this;
             _this.count = 0;
             _this.Start();
             return _this;
         }
         // private methods
-        Player.prototype._checkBounds = function () {
+        Bullet.prototype._checkBounds = function () {
             // check right boundary
             if (this.x > config.Screen.WIDTH) {
                 this.x = config.Screen.WIDTH - 19.5;
@@ -33,20 +33,20 @@ var objects;
             }
         };
         // public methods
-        Player.prototype.Start = function () {
+        Bullet.prototype.Start = function () {
             this.scaleX = 0.15;
             this.scaleY = 0.15;
             this.halfWidth = 460;
             this.y = 460;
         };
-        Player.prototype.Update = function () {
+        Bullet.prototype.Update = function () {
             //this.x = managers.Game.Stage.mouseX;
             //  alert("inside player update ");
             this.Move();
             this._checkBounds();
         };
-        Player.prototype.Reset = function () { };
-        Player.prototype.Move = function () {
+        Bullet.prototype.Reset = function () { };
+        Bullet.prototype.Move = function () {
             /*
             console.log("move left : " + objects.Game.keyboardManager.moveLeft);
             console.log("move right : " + objects.Game.keyboardManager.moveRight);
@@ -55,15 +55,18 @@ var objects;
             */
             //Keyboard Controls
             if (objects.Game.keyboardManager.moveLeft) {
-                alert("inside jump");
                 this.x -= 20;
             }
             if (objects.Game.keyboardManager.moveRight) {
                 this.x += 20;
             }
+            if (objects.Game.keyboardManager.jump) {
+                alert("isnide bullet jump");
+                this.y -= 5;
+            }
         };
-        return Player;
+        return Bullet;
     }(objects.GameObject));
-    objects.Player = Player;
+    objects.Bullet = Bullet;
 })(objects || (objects = {}));
-//# sourceMappingURL=player.js.map
+//# sourceMappingURL=bullet.js.map

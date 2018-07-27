@@ -1,10 +1,10 @@
 namespace objects {
-    export class Player extends objects.GameObject {
-      private _bullet:objects.Bullet;
+    export class Bullet extends objects.GameObject {
 
       public count:number=0;
+
       constructor(assetManager: createjs.LoadQueue) {
-        super(assetManager, "PlayerImg");
+        super(assetManager, "BulletImg");
         this.Start();
        
     }
@@ -54,9 +54,16 @@ namespace objects {
         */
 
         //Keyboard Controls
-        if (objects.Game.keyboardManager.moveLeft) {  alert("inside jump"); this.x -= 20; }
+        if (objects.Game.keyboardManager.moveLeft) { this.x -= 20; }
 
         if (objects.Game.keyboardManager.moveRight) { this.x += 20; }
+
+        if(objects.Game.keyboardManager.jump){
+            alert("isnide bullet jump");
+            this.y -= 5; 
+        }
+
+
     }
     }
   }

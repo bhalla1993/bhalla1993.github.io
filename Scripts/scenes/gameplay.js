@@ -19,6 +19,12 @@ var scenes;
             return _this;
         }
         // private methods
+        GamePlay.prototype._buildEnemies = function () {
+            for (var count = 0; count < this._enemyNum; count++) {
+                this._enemies.push(new objects.Enemy(this.assetManager));
+                //this._clouds[count] = new objects.Cloud();
+            }
+        };
         // public methods
         GamePlay.prototype.Start = function () {
             this.gameSound = createjs.Sound.play("Bullet");
@@ -26,11 +32,20 @@ var scenes;
             this.gameSound.volume = 0.0;
             this._background = new objects.Background();
             this._player = new objects.Player(this.assetManager);
+            this._bullet = new objects.Bullet(this.assetManager);
+            // creates an empty array of type Cloud
+            this._enemies = new Array();
+            this._enemyNum = 3;
+            this._buildEnemies();
             this.Main();
         };
         GamePlay.prototype.Update = function () {
             this._background.Update();
             this._player.Update();
+            this._bullet.Update();
+            this._enemies.forEach(function (enemy) {
+                enemy.Update();
+            });
         };
         GamePlay.prototype.Reset = function () {
         };
@@ -43,6 +58,11 @@ var scenes;
             //this.addChild(this._ocean);
             this.addChild(this._background);
             this.addChild(this._player);
+            // adding the cloud to the scene
+            for (var _i = 0, _a = this._enemies; _i < _a.length; _i++) {
+                var enemy = _a[_i];
+                this.addChild(enemy);
+            }
         };
         return GamePlay;
     }(objects.Scene));

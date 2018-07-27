@@ -24,8 +24,6 @@
         {id: "BulletImg", src:"/Assets/images/bullet.png"},
         {id: "EnemyImg", src:"/Assets/images/enemy.png"},
         {id: "PlayerImg", src:"/Assets/images/player.png"}
-        
-        
     ]
 
     

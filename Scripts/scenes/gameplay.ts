@@ -4,6 +4,10 @@ module scenes {
         private _background:objects.Background;
         public gameSound:createjs.AbstractSoundInstance;
         private _player:objects.Player;
+        private _bullet:objects.Bullet;
+        private _enemies:objects.Enemy[];
+        private _enemyNum:number;
+
 
         // constructors
         constructor(assetManager: createjs.LoadQueue){
@@ -11,7 +15,13 @@ module scenes {
             this.Start();
         }
 
-        // private methods
+          // private methods
+          private _buildEnemies():void {
+            for (let count = 0; count < this._enemyNum; count++) {
+                this._enemies.push(new objects.Enemy(this.assetManager));
+                //this._clouds[count] = new objects.Cloud();
+            }
+        }
 
         // public methods
         public Start():void {
@@ -23,6 +33,13 @@ module scenes {
 
             this._background = new objects.Background();
             this._player=new objects.Player(this.assetManager);
+            this._bullet=new objects.Bullet(this.assetManager);
+             // creates an empty array of type Cloud
+             this._enemies = new Array<objects.Enemy>();
+             this._enemyNum = 3;
+ 
+             this._buildEnemies();
+             
             
             this.Main();
         }
@@ -30,6 +47,10 @@ module scenes {
         public Update():void {
             this._background.Update();
             this._player.Update();
+            this._bullet.Update();
+            this._enemies.forEach(enemy => {
+                enemy.Update();
+            });
         }
 
         public Reset():void {
@@ -46,7 +67,10 @@ module scenes {
             //this.addChild(this._ocean);
             this.addChild(this._background);
             this.addChild(this._player);            
-
+        // adding the cloud to the scene
+        for (const enemy of this._enemies) {
+            this.addChild(enemy);
+        }
        }
 
     }
