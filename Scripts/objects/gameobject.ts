@@ -9,7 +9,7 @@ module objects {
 
         // constructors
         constructor(imageString:string) {
-            super(imageString);
+            super(managers.Game.AssetManager.getResult(imageString));
 
             this.name = imageString;
             this._initialize();

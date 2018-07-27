@@ -9,6 +9,8 @@ module scenes {
         private _instructionButton:objects.Button;
         private _exitButton:objects.Button;
         
+        public gameSound:createjs.AbstractSoundInstance;
+
         // constructors
         constructor() {
             super();
@@ -21,9 +23,11 @@ module scenes {
         // public methods
         public Start():void {
 
-            //this._ocean = new objects.Ocean();
-            
-            //this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Dock51", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
+            this.gameSound = createjs.Sound.play("GameMusic");
+            this.gameSound.loop = -1;
+            this.gameSound.volume = 0.1;
+
+
             this._gameNameLabel=new objects.Label("Space Shooter","70px","Arial","#FFF000",400,100,true);
             this._background = new objects.Background();
             this._singlePlayer=new objects.Label("Single Player","50px","Arial","#FFF000",400,200,true);            
@@ -45,6 +49,7 @@ module scenes {
         }
 
         public Destroy():void {
+            this.gameSound.stop();
             this.removeAllChildren();
         }
 
@@ -57,10 +62,14 @@ module scenes {
             this.addChild(this._singlePlayer);
             this.addChild(this._levelLabel);
             this.addChild(this._playButton);
+            this._playButton.on("click", function(){
+                managers.Game.CurrentState = config.Scene.GAMEPLAY;
+            }, this);
+            
             this.addChild(this._instructionButton);
             this.addChild(this._exitButton);
 
-             this.addChild(this._instructionButton);
+            this.addChild(this._instructionButton);
 
             this._instructionButton.on("click", function(){
                 managers.Game.CurrentState = config.Scene.INSTRUCTIONS;

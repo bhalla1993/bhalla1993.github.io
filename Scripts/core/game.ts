@@ -11,13 +11,18 @@
     
     
     let Manifest = [
-        {id: "bullet", src:"/Assets/audio/bullet.mp3"},
+        {id: "Bullet", src:"/Assets/audio/bullet.mp3"},
+        {id: "GameMusic", src:"/Assets/audio/backgroundMusic.wav"},
         {id: "StartButton", src:"/Assets/images/StartButton.png"},
         {id: "BackGround", src:"/Assets/images/background.jpg"},
         {id: "PlayButton", src:"/Assets/images/play.png"},
         {id: "InstructionButton", src:"/Assets/images/instructions.png"},
         {id: "ExitButton", src:"/Assets/images/exit.png"},
-        {id: "BackButton", src:"/Assets/images/back.png"}
+        {id: "BackButton", src:"/Assets/images/back.png"},
+        {id: "BulletImg", src:"/Assets/images/bullet.png"},
+        {id: "EnemyImg", src:"/Assets/images/enemy.png"},
+        {id: "PlayerImg", src:"/Assets/images/player.png"}
+        
         
     ]
 
