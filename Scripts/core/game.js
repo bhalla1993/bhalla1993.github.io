@@ -7,7 +7,7 @@
     var AssetManager;
     var CurrentScene;
     var CurrentState;
-    var TextureAtlas;
+    var ScoreBoard;
     var keyboardManager;
     var Manifest = [
         { id: "Bullet", src: "/Assets/audio/bullet.mp3" },
@@ -42,14 +42,9 @@
         createjs.Ticker.on("tick", Update);
         CurrentState = config.Scene.MENU;
         managers.Game.CurrentState = CurrentState;
+        ScoreBoard = new managers.ScoreBoard;
+        managers.Game.ScoreBoard = ScoreBoard;
         objects.Game.assetManager = AssetManager;
-        //ScoreBoard = new managers.ScoreBoard;
-        //managers.Game.ScoreBoard = ScoreBoard;
-        //textureData.images = [AssetManager.getResult("textureAtlas")];
-        //TextureAtlas = new createjs.SpriteSheet(textureData);
-        //managers.Game.TextureAtlas = TextureAtlas;
-        //stats = new Stats();
-        //SetupStats();
         keyboardManager = new managers.Keyboard;
         objects.Game.keyboardManager = keyboardManager;
         // This is where all the magic happens

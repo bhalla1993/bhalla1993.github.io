@@ -37,9 +37,11 @@ var scenes;
             this.Main();
         };
         GamePlay.prototype.Update = function () {
+            var _this = this;
             this._background.Update();
             this._player.Update();
             this._enemies.forEach(function (enemy) {
+                managers.Collision.check(_this._player, enemy);
                 enemy.Update();
             });
         };
@@ -51,14 +53,14 @@ var scenes;
         };
         GamePlay.prototype.Main = function () {
             console.log("Starting - GAME PLAY SCENE");
-            //this.addChild(this._ocean);
             this.addChild(this._background);
             this.addChild(this._player);
-            // adding the cloud to the scene
             for (var _i = 0, _a = this._enemies; _i < _a.length; _i++) {
                 var enemy = _a[_i];
                 this.addChild(enemy);
             }
+            this.addChild(managers.Game.ScoreBoard.LivesLabel);
+            this.addChild(managers.Game.ScoreBoard.ScoreLabel);
         };
         return GamePlay;
     }(objects.Scene));

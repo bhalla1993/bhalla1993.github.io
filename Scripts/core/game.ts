@@ -7,7 +7,7 @@
     let AssetManager: createjs.LoadQueue;
     let CurrentScene: objects.Scene;
     let CurrentState: config.Scene;
-    let TextureAtlas: createjs.SpriteSheet;
+    let ScoreBoard: managers.ScoreBoard;
     
     let keyboardManager:managers.Keyboard;
     
@@ -53,22 +53,14 @@
         CurrentState = config.Scene.MENU;
         managers.Game.CurrentState = CurrentState;
 
+        ScoreBoard = new managers.ScoreBoard;
+        managers.Game.ScoreBoard = ScoreBoard;
+
         objects.Game.assetManager = AssetManager;
 
-
-        //ScoreBoard = new managers.ScoreBoard;
-        //managers.Game.ScoreBoard = ScoreBoard;
-
-        //textureData.images = [AssetManager.getResult("textureAtlas")];
-        //TextureAtlas = new createjs.SpriteSheet(textureData);
-        //managers.Game.TextureAtlas = TextureAtlas;
-
-        //stats = new Stats();
-        //SetupStats();
         keyboardManager=new managers.Keyboard;
         objects.Game.keyboardManager=keyboardManager;
 
-        
         // This is where all the magic happens
         Main();
     }

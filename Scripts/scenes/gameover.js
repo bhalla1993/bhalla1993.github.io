@@ -12,8 +12,6 @@ var scenes;
 (function (scenes) {
     var GameOver = /** @class */ (function (_super) {
         __extends(GameOver, _super);
-        //private _startButton: objects.Button;
-        //private _ocean: objects.Ocean;
         // constructors
         function GameOver(assetManager) {
             var _this = _super.call(this, assetManager) || this;
@@ -23,27 +21,32 @@ var scenes;
         // private methods
         // public methods
         GameOver.prototype.Start = function () {
-            //this._ocean = new objects.Ocean();
-            this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Dock51", "#FFFF00", 50, 50, true);
-            //this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
+            this.gameSound = createjs.Sound.play("GameMusic");
+            this.gameSound.loop = -1;
+            this.gameSound.volume = 0.1;
+            this._gameNameLabel = new objects.Label("Game Over", "70px", "Arial", "#FFF000", 400, 100, true);
+            this._background = new objects.Background();
+            this._exitButton = new objects.Button("ExitButton", 600, 450, true);
             this.Main();
         };
         GameOver.prototype.Update = function () {
-            //this._ocean.Update();
+            this._background.Update();
         };
         GameOver.prototype.Reset = function () {
         };
         GameOver.prototype.Destroy = function () {
+            this.gameSound.stop();
             this.removeAllChildren();
         };
         GameOver.prototype.Main = function () {
             console.log("Starting - START SCENE");
-            //this.addChild(this._ocean);
-            this.addChild(this._welcomeLabel);
-            //this.addChild(this._startButton);
-            /*this._startButton.on("click", function(){
-                managers.Game.CurrentState = config.Scene.PLAY;
-            }, this);*/
+            this.addChild(this._background);
+            this.addChild(this._gameNameLabel);
+            this.addChild(this._exitButton);
+            this._exitButton.on("click", function () {
+                this.gameSound.stop();
+                managers.Game.CurrentState = config.Scene.MENU;
+            }, this);
         };
         return GameOver;
     }(objects.Scene));

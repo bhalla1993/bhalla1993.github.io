@@ -45,6 +45,7 @@ module scenes {
             this._background.Update();
             this._player.Update();
             this._enemies.forEach(enemy => {
+                managers.Collision.check(this._player, enemy);
                 enemy.Update();
             });
 
@@ -61,13 +62,15 @@ module scenes {
 
         public Main():void {
             console.log(`Starting - GAME PLAY SCENE`);
-            //this.addChild(this._ocean);
+        
             this.addChild(this._background);
             this.addChild(this._player);            
-        // adding the cloud to the scene
-        for (const enemy of this._enemies) {
+        
+            for (const enemy of this._enemies) {
             this.addChild(enemy);
-        } 
+            } 
+        this.addChild(managers.Game.ScoreBoard.LivesLabel);
+        this.addChild(managers.Game.ScoreBoard.ScoreLabel);
        }
     }
 }

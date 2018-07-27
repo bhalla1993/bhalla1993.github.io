@@ -3,6 +3,7 @@
 /// <reference path="../../Scripts/objects/button.ts"/>
 /// <reference path="../../Scripts/config/scene.ts"/>
 /// <reference path="../../Scripts/objects/scene.ts"/>
+/// <reference path="../../Scripts/math/Vec2.ts"/>
 
 
 /// <reference path="../../Scripts/objects/gameobject.ts"/>
