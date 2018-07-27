@@ -12,8 +12,8 @@ var objects;
 (function (objects) {
     var Player = /** @class */ (function (_super) {
         __extends(Player, _super);
-        function Player() {
-            var _this = _super.call(this, "PlayerImg") || this;
+        function Player(assetManager) {
+            var _this = _super.call(this, assetManager, "PlayerImg") || this;
             _this.Start();
             return _this;
         }
@@ -30,20 +30,24 @@ var objects;
         };
         // public methods
         Player.prototype.Start = function () {
-            //  this.regX = 100;
-            //  this.regY = 100;
             this.scaleX = 0.15;
             this.scaleY = 0.15;
-            this.y = 420;
+            this.y = 460;
         };
         Player.prototype.Update = function () {
             //this.x = managers.Game.Stage.mouseX;
+            //  alert("inside player update ");
             this.Move();
             this._checkBounds();
         };
         Player.prototype.Reset = function () { };
         Player.prototype.Move = function () {
+            /*
             console.log("move left : " + objects.Game.keyboardManager.moveLeft);
+            console.log("move right : " + objects.Game.keyboardManager.moveRight);
+            console.log("move up : " + objects.Game.keyboardManager.moveForward);
+            console.log("move down : " + objects.Game.keyboardManager.moveBackward);
+            */
             //Keyboard Controls
             if (objects.Game.keyboardManager.moveLeft) {
                 this.x -= 5;

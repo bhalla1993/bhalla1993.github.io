@@ -15,8 +15,8 @@ var scenes;
         //private _startButton: objects.Button;
         //private _ocean: objects.Ocean;
         // constructors
-        function GameOver() {
-            var _this = _super.call(this) || this;
+        function GameOver(assetManager) {
+            var _this = _super.call(this, assetManager) || this;
             _this.Start();
             return _this;
         }

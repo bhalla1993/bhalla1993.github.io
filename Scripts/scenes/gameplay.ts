@@ -6,9 +6,8 @@ module scenes {
         private _player:objects.Player;
 
         // constructors
-        constructor() {
-            super();
-
+        constructor(assetManager: createjs.LoadQueue){
+            super(assetManager);
             this.Start();
         }
 
@@ -19,17 +18,18 @@ module scenes {
 
             this.gameSound = createjs.Sound.play("Bullet");
             this.gameSound.loop = -1;
-            this.gameSound.volume = 0.1;
+            this.gameSound.volume = 0.0;
 
 
             this._background = new objects.Background();
-            this._player=new objects.Player();
+            this._player=new objects.Player(this.assetManager);
             
             this.Main();
         }
 
         public Update():void {
             this._background.Update();
+            this._player.Update();
         }
 
         public Reset():void {

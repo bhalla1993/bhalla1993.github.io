@@ -7,22 +7,11 @@ var managers;
      * @class Keyboard
      */
     var Keyboard = /** @class */ (function () {
-        /**
-         *Creates an instance of Keyboard.
-         * @memberof Keyboard
-         */
         function Keyboard() {
             this.enabled = true;
             document.addEventListener('keydown', this.onKeyDown.bind(this), false);
             document.addEventListener('keyup', this.onKeyUp.bind(this), false);
         }
-        //public methods 
-        /**
-         *
-         *
-         * @param {KeyboardEvent} event
-         * @memberof Keyboard
-         */
         Keyboard.prototype.onKeyDown = function (event) {
             switch (event.keyCode) {
                 case config.Keys.W:
@@ -46,12 +35,6 @@ var managers;
                     break;
             }
         };
-        /**
-         *
-         *
-         * @param {KeyboardEvent} event
-         * @memberof Keyboard
-         */
         Keyboard.prototype.onKeyUp = function (event) {
             switch (event.keyCode) {
                 case config.Keys.W:

@@ -40,6 +40,7 @@
         createjs.Ticker.on("tick", Update);
         CurrentState = config.Scene.MENU;
         managers.Game.CurrentState = CurrentState;
+        objects.Game.assetManager = AssetManager;
         //ScoreBoard = new managers.ScoreBoard;
         //managers.Game.ScoreBoard = ScoreBoard;
         //textureData.images = [AssetManager.getResult("textureAtlas")];
@@ -64,22 +65,19 @@
     }
     function Main() {
         console.log("%c Switching Scenes...", "font-style:italic; font-size:16px; color:blue;");
-        if (CurrentScene) {
-            CurrentScene.Destroy();
-            stage.removeChild(CurrentScene);
-        }
+        stage.removeAllChildren();
         switch (CurrentState) {
             case config.Scene.MENU:
-                CurrentScene = new scenes.Menu();
+                CurrentScene = new scenes.Menu(AssetManager);
                 break;
             case config.Scene.GAMEPLAY:
-                CurrentScene = new scenes.GamePlay();
+                CurrentScene = new scenes.GamePlay(AssetManager);
                 break;
             case config.Scene.GAMEOVER:
-                CurrentScene = new scenes.GameOver();
+                CurrentScene = new scenes.GameOver(AssetManager);
                 break;
             case config.Scene.INSTRUCTIONS:
-                CurrentScene = new scenes.Instructions();
+                CurrentScene = new scenes.Instructions(AssetManager);
                 break;
         }
         managers.Game.CurrentScene = CurrentScene;

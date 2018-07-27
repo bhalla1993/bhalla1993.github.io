@@ -12,9 +12,8 @@ module scenes {
         public gameSound:createjs.AbstractSoundInstance;
 
         // constructors
-        constructor() {
-            super();
-
+        constructor(assetManager: createjs.LoadQueue){
+            super(assetManager);
             this.Start();
         }
 
@@ -25,7 +24,7 @@ module scenes {
 
             this.gameSound = createjs.Sound.play("GameMusic");
             this.gameSound.loop = -1;
-            this.gameSound.volume = 0.1;
+            this.gameSound.volume = 0.0;
 
 
             this._gameNameLabel=new objects.Label("Space Shooter","70px","Arial","#FFF000",400,100,true);
@@ -42,6 +41,7 @@ module scenes {
 
         public Update():void {
             this._background.Update();
+            
         }
 
         public Reset():void {

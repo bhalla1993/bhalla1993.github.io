@@ -1,11 +1,5 @@
 var objects;
 (function (objects) {
-    /**
-     *
-     *
-     * @export
-     * @class Game
-     */
     var Game = /** @class */ (function () {
         function Game() {
         }

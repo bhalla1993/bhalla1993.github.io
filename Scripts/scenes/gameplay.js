@@ -13,8 +13,8 @@ var scenes;
     var GamePlay = /** @class */ (function (_super) {
         __extends(GamePlay, _super);
         // constructors
-        function GamePlay() {
-            var _this = _super.call(this) || this;
+        function GamePlay(assetManager) {
+            var _this = _super.call(this, assetManager) || this;
             _this.Start();
             return _this;
         }
@@ -23,13 +23,14 @@ var scenes;
         GamePlay.prototype.Start = function () {
             this.gameSound = createjs.Sound.play("Bullet");
             this.gameSound.loop = -1;
-            this.gameSound.volume = 0.1;
+            this.gameSound.volume = 0.0;
             this._background = new objects.Background();
-            this._player = new objects.Player();
+            this._player = new objects.Player(this.assetManager);
             this.Main();
         };
         GamePlay.prototype.Update = function () {
             this._background.Update();
+            this._player.Update();
         };
         GamePlay.prototype.Reset = function () {
         };

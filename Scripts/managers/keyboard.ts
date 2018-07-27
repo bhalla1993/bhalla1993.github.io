@@ -19,23 +19,13 @@ module managers
         public paused:boolean;
         
 
-        /**
-         *Creates an instance of Keyboard.
-         * @memberof Keyboard
-         */
+       
         constructor()
         {
             this.enabled=true;
             document.addEventListener('keydown',this.onKeyDown.bind(this),false);
             document.addEventListener('keyup',this.onKeyUp.bind(this),false);
         }
-        //public methods 
-        /**
-         *
-         *
-         * @param {KeyboardEvent} event
-         * @memberof Keyboard
-         */
         public onKeyDown(event:KeyboardEvent) :void
         {
         switch(event.keyCode){
@@ -65,15 +55,9 @@ module managers
 
         }
         }
-/**
- *
- *
- * @param {KeyboardEvent} event
- * @memberof Keyboard
- */
+
 public onKeyUp(event:KeyboardEvent) :void
         {
-            
             switch(event.keyCode){
                 case config.Keys.W:
                 case config.Keys.UP_ARROW:

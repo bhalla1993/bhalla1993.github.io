@@ -13,8 +13,8 @@ var scenes;
     var Instructions = /** @class */ (function (_super) {
         __extends(Instructions, _super);
         // constructors
-        function Instructions() {
-            var _this = _super.call(this) || this;
+        function Instructions(assetManager) {
+            var _this = _super.call(this, assetManager) || this;
             _this.Start();
             return _this;
         }

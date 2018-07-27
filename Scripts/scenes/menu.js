@@ -13,8 +13,8 @@ var scenes;
     var Menu = /** @class */ (function (_super) {
         __extends(Menu, _super);
         // constructors
-        function Menu() {
-            var _this = _super.call(this) || this;
+        function Menu(assetManager) {
+            var _this = _super.call(this, assetManager) || this;
             _this.Start();
             return _this;
         }
@@ -23,7 +23,7 @@ var scenes;
         Menu.prototype.Start = function () {
             this.gameSound = createjs.Sound.play("GameMusic");
             this.gameSound.loop = -1;
-            this.gameSound.volume = 0.1;
+            this.gameSound.volume = 0.0;
             this._gameNameLabel = new objects.Label("Space Shooter", "70px", "Arial", "#FFF000", 400, 100, true);
             this._background = new objects.Background();
             this._singlePlayer = new objects.Label("Single Player", "50px", "Arial", "#FFF000", 400, 200, true);

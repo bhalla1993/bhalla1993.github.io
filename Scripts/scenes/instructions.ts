@@ -8,9 +8,8 @@ module scenes {
         private _backButton:objects.Button;
         
         // constructors
-        constructor() {
-            super();
-
+        constructor(assetManager: createjs.LoadQueue){
+            super(assetManager);
             this.Start();
         }
 

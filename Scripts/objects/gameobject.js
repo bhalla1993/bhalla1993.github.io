@@ -12,22 +12,42 @@ var objects;
 (function (objects) {
     var GameObject = /** @class */ (function (_super) {
         __extends(GameObject, _super);
-        // constructors
-        function GameObject(imageString) {
-            var _this = _super.call(this, managers.Game.AssetManager.getResult(imageString)) || this;
+        /**
+         *Creates an instance of GameObject.
+         * @param {createjs.LoadQueue} assetManager
+         * @param {string} imageString
+         * @memberof GameObject
+         */
+        function GameObject(assetManager, imageString) {
+            var _this = _super.call(this, assetManager.getResult(imageString)) || this;
             _this.name = imageString;
             _this._initialize();
             return _this;
+            //  this.regX = this.getBounds().width * 0.5
+            //  this.regY = this.getBounds().height * 0.5
         }
-        // private methods
+        //private
+        /**
+         *
+         *
+         * @private
+         * @memberof GameObject
+         */
         GameObject.prototype._initialize = function () {
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.halfWidth = this.width * 0.5;
             this.halfHeight = this.height * 0.5;
+            this.regX = this.halfWidth;
+            this.regY = this.halfHeight;
             this.isColliding = false;
         };
-        // public methods
+        // public
+        /**
+         *
+         *
+         * @memberof GameObject
+         */
         GameObject.prototype.Start = function () {
         };
         GameObject.prototype.Update = function () {
@@ -35,6 +55,8 @@ var objects;
         GameObject.prototype.Reset = function () {
         };
         GameObject.prototype.Move = function () {
+        };
+        GameObject.prototype.CheckBounds = function () {
         };
         return GameObject;
     }(createjs.Bitmap));

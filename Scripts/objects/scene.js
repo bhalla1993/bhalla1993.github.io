@@ -12,22 +12,39 @@ var objects;
 (function (objects) {
     var Scene = /** @class */ (function (_super) {
         __extends(Scene, _super);
-        // member variables
-        // constructors
-        function Scene() {
-            return _super.call(this) || this;
+        //private 
+        /**
+         *Creates an instance of Scene.
+         * @param {createjs.LoadQueue} assetManager
+         * @memberof Scene
+         */
+        function Scene(assetManager) {
+            var _this = _super.call(this) || this;
+            _this.assetManager = assetManager;
+            return _this;
         }
-        // private methods
-        // public methods
+        /**
+         *
+         *
+         * @memberof Scene
+         */
+        Scene.prototype.Init = function () {
+        };
+        /**
+         *
+         *
+         * @memberof Scene
+         */
+        Scene.prototype.Main = function () {
+        };
+        /**
+         *
+         *
+         * @memberof Scene
+         */
         Scene.prototype.Start = function () {
         };
         Scene.prototype.Update = function () {
-        };
-        Scene.prototype.Reset = function () {
-        };
-        Scene.prototype.Destroy = function () {
-        };
-        Scene.prototype.Main = function () {
         };
         return Scene;
     }(createjs.Container));

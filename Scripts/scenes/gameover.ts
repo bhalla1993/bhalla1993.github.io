@@ -6,9 +6,8 @@ module scenes {
         //private _ocean: objects.Ocean;
 
         // constructors
-        constructor() {
-            super();
-
+        constructor(assetManager: createjs.LoadQueue){
+            super(assetManager);
             this.Start();
         }
 
