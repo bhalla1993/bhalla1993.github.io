@@ -55,7 +55,7 @@ module scenes {
 
             this._exitButton.on("click", function(){
                 this.gameSound.stop();
-
+                managers.Game.ScoreBoard.Lives = 5;
                 managers.Game.CurrentState = config.Scene.MENU;
             }, this);
         }

@@ -21,6 +21,7 @@
 /// <reference path="../../Scripts/objects/label.ts"/>
 /// <reference path="../../Scripts/objects/player.ts"/>
 /// <reference path="../../Scripts/objects/enemy.ts"/>
+/// <reference path="../../Scripts/objects/food.ts"/>
 /// <reference path="../../Scripts/objects/scene.ts"/>
 
 

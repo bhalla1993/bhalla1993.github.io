@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -21,10 +24,17 @@ var scenes;
         // private methods
         // public methods
         Instructions.prototype.Start = function () {
-            this._gameNameLabel = new objects.Label("Instructions", "50px", "Arial", "#FFF000", 400, 30, true);
+            this._gameNameLabel = new objects.Label("Instructions For Feeding Fish(Single Level Game)", "30px", "Arial", "#FFF000", 400, 30, true);
             this._background = new objects.Background();
             this._backButton = new objects.Button("BackButton", 400, 450, true);
-            this._instructionText = new objects.Label("Hello World", "50px", "Arial", "#FFFFFF", 400, 150, true);
+            this._instructions = "A. How to Play\n\n";
+            this._instructions += "1. Controls\n\n \t\to A(MoveLeft) or Left Arrow Key\n\n \t\to D(MoveRight) or Right Arrow Key\n\n";
+            this._instructions += "2. Score\n\n";
+            this._instructions += "\t\t\to 100 Points when player eats every single food item(Apple, Grape or Watermelon)\n\n";
+            this._instructions += "3. Live(s)\n\n";
+            this._instructions += "\t\t\to Total 5 lives, one life reduced when player eats every mushroom food item\n\n";
+            this._instructions += "\t\t\to When there is no live left, GAME OVER\n\n";
+            this._instructionText = new objects.Label(this._instructions, "20px", "Arial", "#FFFFFF", 400, 280, true);
             this._instructionText.textBaseline = "alphabetic";
             this.Main();
         };

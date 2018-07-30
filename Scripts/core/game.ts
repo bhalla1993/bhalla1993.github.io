@@ -25,6 +25,9 @@
         {id: "EnemyImg0", src:"/Assets/images/enemy0.png"},
         {id: "EnemyImg1", src:"/Assets/images/enemy1.png"},
         {id: "EnemyImg2", src:"/Assets/images/enemy2.png"},
+        {id: "FoodImg0", src:"/Assets/images/food0.png"},
+        {id: "FoodImg1", src:"/Assets/images/food1.png"},
+        {id: "FoodImg2", src:"/Assets/images/food2.png"},        
         {id: "PlayerImg", src:"/Assets/images/player.png"}
     ]
 

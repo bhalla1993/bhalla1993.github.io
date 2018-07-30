@@ -32,9 +32,9 @@ namespace objects {
   
       // public methods
       public Start(): void {
-        this.scaleX=0.15;
-        this.scaleY=0.15;
-        this.halfWidth=460;
+       // this.scaleX=0.15;
+       // this.scaleY=0.15;
+       // this.halfWidth=460;
         this.y = 460;     
       
       }

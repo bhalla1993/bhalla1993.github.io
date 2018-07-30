@@ -13,16 +13,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Enemy = /** @class */ (function (_super) {
-        __extends(Enemy, _super);
-        function Enemy(assetManager, imageString) {
+    var Food = /** @class */ (function (_super) {
+        __extends(Food, _super);
+        function Food(assetManager, imageString) {
             var _this = _super.call(this, assetManager, imageString) || this;
             _this.counter = 0;
             _this.Start();
             return _this;
         }
         // private methods
-        Enemy.prototype._checkBounds = function () {
+        Food.prototype._checkBounds = function () {
             // check bottom boundary
             if (this.y > config.Screen.HEIGHT + this.halfHeight) {
                 this.Reset();
@@ -35,26 +35,22 @@ var objects;
             }
         };
         // public methods
-        Enemy.prototype.Start = function () {
-            //this.regX = this.halfWidth;
-            //this.regY = this.halfHeight;
-            //this.scaleX=0.2;
-            //this.scaleY=0.2;
+        Food.prototype.Start = function () {
             this.Reset();
         };
-        Enemy.prototype.Update = function () {
+        Food.prototype.Update = function () {
             this.y += this._verticalSpeed;
             this.x += this._horizontalSpeed;
             this._checkBounds();
         };
-        Enemy.prototype.Reset = function () {
+        Food.prototype.Reset = function () {
             this._verticalSpeed = Math.floor((Math.random() * 5) + 5); // between 5 and 10 ppf
             this._horizontalSpeed = Math.floor((Math.random() * 4) - 5); // between -2 and 2 ppf
             this.y = -this.height;
             this.x = Math.floor((Math.random() * (config.Screen.WIDTH - this.width)) + this.halfWidth);
         };
-        return Enemy;
+        return Food;
     }(objects.GameObject));
-    objects.Enemy = Enemy;
+    objects.Food = Food;
 })(objects || (objects = {}));
-//# sourceMappingURL=enemy.js.map
+//# sourceMappingURL=food.js.map

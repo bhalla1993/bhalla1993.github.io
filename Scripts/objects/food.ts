@@ -1,9 +1,10 @@
 namespace objects {
-    export class Enemy extends objects.GameObject {
+    export class Food extends objects.GameObject {
+      
       // member variables
       private _verticalSpeed: number;
       private _horizontalSpeed: number;
-      public   counter:number=0;
+      public counter:number=0;
 
       constructor(assetManager: createjs.LoadQueue,imageString:string) {
         super(assetManager, imageString);
@@ -28,10 +29,6 @@ namespace objects {
   
       // public methods
       public Start(): void {
-        //this.regX = this.halfWidth;
-        //this.regY = this.halfHeight;
-        //this.scaleX=0.2;
-        //this.scaleY=0.2;
         this.Reset();
       }
   

@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -24,7 +27,7 @@ var scenes;
             this.gameSound = createjs.Sound.play("GameMusic");
             this.gameSound.loop = -1;
             this.gameSound.volume = 0.0;
-            this._gameNameLabel = new objects.Label("Space Shooter", "70px", "Arial", "#FFF000", 400, 100, true);
+            this._gameNameLabel = new objects.Label("Feeding Fish", "70px", "Arial", "#FFF000", 400, 100, true);
             this._background = new objects.Background();
             this._singlePlayer = new objects.Label("Single Player", "50px", "Arial", "#FFF000", 400, 200, true);
             this._levelLabel = new objects.Label("Level 1", "70px", "Arial", "#FFF000", 400, 300, true);

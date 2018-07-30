@@ -7,6 +7,8 @@ module scenes {
         private _enemies:objects.Enemy[];
         private _enemyNum:number;
 
+        private _food:objects.Food[];
+        private _foodNum:number;
 
         // constructors
         constructor(assetManager: createjs.LoadQueue){
@@ -15,9 +17,14 @@ module scenes {
         }
 
           // private methods
-          private _buildEnemies():void {
+        private _buildEnemies():void {
             for (let count = 0; count < this._enemyNum; count++) {
                 this._enemies.push(new objects.Enemy(this.assetManager,"EnemyImg"+count));
+            }
+        }
+        private _buildFood():void {
+            for (let count = 0; count < this._foodNum; count++) {
+                this._food.push(new objects.Food(this.assetManager,"FoodImg"+count));
             }
         }
        
@@ -34,9 +41,16 @@ module scenes {
             this._player=new objects.Player(this.assetManager);
          
 
-             this._enemies = new Array<objects.Enemy>();
-             this._enemyNum = 3;
+            this._food = new Array<objects.Food>();
+            this._foodNum = 3;
  
+            this._buildFood();
+
+             
+            this._enemies = new Array<objects.Enemy>();
+            this._enemyNum = 1;
+
+            
             this._buildEnemies();            
             this.Main();
         }
@@ -44,10 +58,16 @@ module scenes {
         public Update():void {
             this._background.Update();
             this._player.Update();
+            this._food.forEach(food => {
+                managers.Collision.check(this._player,food);
+                food.Update();
+            });
+            
             this._enemies.forEach(enemy => {
                 managers.Collision.check(this._player, enemy);
                 enemy.Update();
             });
+            
 
         }
 
@@ -66,6 +86,11 @@ module scenes {
             this.addChild(this._background);
             this.addChild(this._player);            
         
+            for (const food of this._food) 
+            {
+                this.addChild(food);
+            } 
+
             for (const enemy of this._enemies) {
             this.addChild(enemy);
             } 
