@@ -18,6 +18,7 @@ var objects;
         function Player(assetManager) {
             var _this = _super.call(this, assetManager, "PlayerImg") || this;
             _this.count = 0;
+            _this.isColliding = false;
             _this.Start();
             return _this;
         }

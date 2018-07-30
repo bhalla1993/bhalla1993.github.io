@@ -3,9 +3,11 @@ namespace objects {
       private _bulletNumber:number;
       public count:number=0;
       public static counter:number=0;
+      
 
       constructor(assetManager: createjs.LoadQueue) {
         super(assetManager, "PlayerImg");        
+        this.isColliding=false;
         this.Start();
 
        

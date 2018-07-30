@@ -27,9 +27,10 @@ var scenes;
             this.gameSound = createjs.Sound.play("GameMusic");
             this.gameSound.loop = -1;
             this.gameSound.volume = 0;
-            this._gameNameLabel = new objects.Label("Game Over", "70px", "Arial", "#FFF000", 400, 100, true);
+            this._gameNameLabel = new objects.Label("Game Over", "90px", "Arial", "#FFF000", 400, 200, true);
             this._background = new objects.Background();
-            this._exitButton = new objects.Button("ExitButton", 600, 450, true);
+            this._restartButton = new objects.Button("RestartButton", 300, 400, true);
+            this._exitButton = new objects.Button("ExitButton", 500, 400, true);
             this.Main();
         };
         GameOver.prototype.Update = function () {
@@ -45,10 +46,18 @@ var scenes;
             console.log("Starting - START SCENE");
             this.addChild(this._background);
             this.addChild(this._gameNameLabel);
+            this.addChild(this._restartButton);
+            this._restartButton.on("click", function () {
+                this.gameSound.stop();
+                managers.Game.ScoreBoard.Lives = 5;
+                managers.Game.ScoreBoard.Score = 0;
+                managers.Game.CurrentState = config.Scene.GAMEPLAY;
+            }, this);
             this.addChild(this._exitButton);
             this._exitButton.on("click", function () {
                 this.gameSound.stop();
                 managers.Game.ScoreBoard.Lives = 5;
+                managers.Game.ScoreBoard.Score = 0;
                 managers.Game.CurrentState = config.Scene.MENU;
             }, this);
         };

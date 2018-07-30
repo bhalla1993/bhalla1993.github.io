@@ -7,6 +7,7 @@ namespace objects {
 
       constructor(assetManager: createjs.LoadQueue,imageString:string) {
         super(assetManager, imageString);
+        this.isColliding=false;
         this.Start();       
     }
 

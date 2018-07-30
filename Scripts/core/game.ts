@@ -23,6 +23,7 @@
         {id: "InstructionButton", src:"/Assets/images/instructions.png"},
         {id: "ExitButton", src:"/Assets/images/exit.png"},
         {id: "BackButton", src:"/Assets/images/back.png"},
+        {id: "RestartButton", src:"/Assets/images/restart.png"},
         {id: "BulletImg", src:"/Assets/images/bullet.png"},
         {id: "EnemyImg0", src:"/Assets/images/enemy0.png"},
         {id: "EnemyImg1", src:"/Assets/images/enemy1.png"},

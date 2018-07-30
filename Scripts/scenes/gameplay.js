@@ -40,7 +40,7 @@ var scenes;
             this._background = new objects.Background();
             this._player = new objects.Player(this.assetManager);
             this._food = new Array();
-            this._foodNum = 3;
+            this._foodNum = 1;
             this._buildFood();
             this._enemies = new Array();
             this._enemyNum = 1;
@@ -57,6 +57,7 @@ var scenes;
             });
             this._enemies.forEach(function (enemy) {
                 managers.Collision.check(_this._player, enemy);
+                // enemy.isColliding=true;
                 enemy.Update();
             });
         };

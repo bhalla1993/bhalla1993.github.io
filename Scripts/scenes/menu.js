@@ -58,6 +58,9 @@ var scenes;
             }, this);
             this.addChild(this._instructionButton);
             this.addChild(this._exitButton);
+            this._exitButton.on("click", function () {
+                managers.Game.CurrentState = config.Scene.GAMEOVER;
+            }, this);
             this.addChild(this._instructionButton);
             this._instructionButton.on("click", function () {
                 managers.Game.CurrentState = config.Scene.INSTRUCTIONS;

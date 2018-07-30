@@ -18,6 +18,7 @@ var objects;
         function Enemy(assetManager, imageString) {
             var _this = _super.call(this, assetManager, imageString) || this;
             _this.counter = 0;
+            _this.isColliding = false;
             _this.Start();
             return _this;
         }

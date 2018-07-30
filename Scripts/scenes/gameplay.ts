@@ -42,7 +42,7 @@ module scenes {
          
 
             this._food = new Array<objects.Food>();
-            this._foodNum = 3;
+            this._foodNum = 1;
  
             this._buildFood();
 
@@ -62,9 +62,10 @@ module scenes {
                 managers.Collision.check(this._player,food);
                 food.Update();
             });
-            
+
             this._enemies.forEach(enemy => {
                 managers.Collision.check(this._player, enemy);
+               // enemy.isColliding=true;
                 enemy.Update();
             });
             
