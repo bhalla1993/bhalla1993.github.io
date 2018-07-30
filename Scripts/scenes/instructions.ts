@@ -16,6 +16,11 @@ module scenes {
         // private methods
 
         // public methods
+        /**
+         * Start method is called at the start of the class
+         *
+         * @memberof Instructions
+         */
         public Start():void {
             this._gameNameLabel=new objects.Label("Instructions For Feeding Fish(Single Level Game)","30px","Arial","#FFF000",400,30,true);
             this._background = new objects.Background();
@@ -32,18 +37,39 @@ module scenes {
             this.Main();
         }
 
+        /**
+         *Update method is called when stage of scene is updated.
+         *
+         * @memberof Instructions
+         */
         public Update():void {
             this._background.Update();
         }
 
+        /**
+         *Reset method is called while restarting the state of scene
+         *
+         * @memberof Instructions
+         */
         public Reset():void {
 
         }
 
+        /**
+         *Destroy method is called while scene is destroyed 
+         *
+         * @memberof Instructions
+         */
         public Destroy():void {
             this.removeAllChildren();
         }
 
+        /**
+         *All the objects used in this scene are added in this method to scene.
+         *This is the main method of class.
+         *
+         * @memberof Instructions
+         */
         public Main():void {
             console.log(`Starting - START SCENE`);
             //this.addChild(this._ocean);

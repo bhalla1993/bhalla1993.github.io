@@ -12,6 +12,11 @@ module scenes {
         public gameSound:createjs.AbstractSoundInstance;
 
         // constructors
+        /**
+         *Creates an instance of Menu.
+         * @param {createjs.LoadQueue} assetManager
+         * @memberof Menu
+         */
         constructor(assetManager: createjs.LoadQueue){
             super(assetManager);
             this.Start();
@@ -20,6 +25,11 @@ module scenes {
         // private methods
 
         // public methods
+        /**
+         *Start method is called at the start of the class
+         *
+         * @memberof Menu
+         */
         public Start():void {
 
             this.gameSound = createjs.Sound.play("GameMusic");
@@ -39,20 +49,40 @@ module scenes {
             this.Main();
         }
 
+        /**
+         *Update method is called when stage of scene is updated.
+         *
+         * @memberof Menu
+         */
         public Update():void {
             this._background.Update();
             
         }
 
+        /**
+         *Reset method is called while restarting the state of scene
+         *
+         * @memberof Menu
+         */
         public Reset():void {
 
         }
 
+        /**
+         *Destroy method is called while scene is destroyed
+         *
+         * @memberof Menu
+         */
         public Destroy():void {
             this.gameSound.stop();
             this.removeAllChildren();
         }
 
+        /**
+         *
+         *
+         * @memberof Menu
+         */
         public Main():void {
             console.log(`Starting - START SCENE`);
             //this.addChild(this._ocean);

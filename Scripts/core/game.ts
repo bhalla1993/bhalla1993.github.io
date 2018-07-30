@@ -36,6 +36,10 @@
 
     
 
+    /**
+     *Initi method is called to intialise all the requried object at the start of game
+     *
+     */
     function Init():void {
         console.log(`%c Assets Loading...`,"font-weight:bold; font-size:20px; color: green;");
         AssetManager = new createjs.LoadQueue();
@@ -45,6 +49,10 @@
         AssetManager.loadManifest(Manifest);
     }
 
+    /**
+     *Start method is called after intialization of object of this class
+     *
+     */
     function Start():void {
         console.log(`%c Game Initializing...`,"font-weight:bold; font-size:20px; color: red;");
         canvas = document.getElementsByTagName("canvas")[0];
@@ -71,6 +79,10 @@
         Main();
     }
 
+    /**
+     *Update Method is used to update the state of objects
+     *
+     */
     function Update():void {
         //stats.begin();
         if(CurrentState != managers.Game.CurrentState) {
@@ -85,6 +97,10 @@
         //stats.end();
     }
 
+    /**
+     *Main method is called after start state of class
+     *
+     */
     function Main():void {
         console.log(`%c Switching Scenes...`,"font-style:italic; font-size:16px; color:blue;");
 

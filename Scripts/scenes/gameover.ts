@@ -34,19 +34,39 @@ module scenes {
             this.Main();
         }
 
+        /**
+         *Update method is used to update the state of object
+         *
+         * @memberof GameOver
+         */
         public Update():void {
             this._background.Update();
         }
 
+        /**
+         *Reset method is used to reset the state of objects
+         *
+         * @memberof GameOver
+         */
         public Reset():void {
 
         }
 
+        /**
+         *
+         *
+         * @memberof GameOver
+         */
         public Destroy():void {
             this.gameSound.stop();
             this.removeAllChildren();
         }
 
+        /**
+         *Main method is called after intialisation
+         *
+         * @memberof GameOver
+         */
         public Main():void {
             console.log(`Starting - START SCENE`);
             this.addChild(this._background);

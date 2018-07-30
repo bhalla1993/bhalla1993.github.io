@@ -5,6 +5,11 @@ namespace objects {
       public static counter:number=0;
       
 
+      /**
+       *Creates an instance of Player.
+       * @param {createjs.LoadQueue} assetManager
+       * @memberof Player
+       */
       constructor(assetManager: createjs.LoadQueue) {
         super(assetManager, "PlayerImg");        
         this.isColliding=false;
@@ -15,6 +20,12 @@ namespace objects {
 
   
       // private methods
+      /**
+       *Set the boundary of player 
+       *
+       * @private
+       * @memberof Player
+       */
       private _checkBounds():void {
        
         // check right boundary
@@ -33,6 +44,11 @@ namespace objects {
       }
   
       // public methods
+      /**
+       *Method called after constructor intialisation
+       *
+       * @memberof Player
+       */
       public Start(): void {
        // this.scaleX=0.15;
        // this.scaleY=0.15;
@@ -41,6 +57,11 @@ namespace objects {
       
       }
   
+      /**
+       *Update method is used to update the state of object
+       *
+       * @memberof Player
+       */
       public Update(): void {
           //this.x = managers.Game.Stage.mouseX;
         //  alert("inside player update ");
@@ -48,8 +69,18 @@ namespace objects {
          this._checkBounds();
       }
   
+      /**
+       *
+       *
+       * @memberof Player
+       */
       public Reset(): void {}
       
+      /**
+       *Move method is called when player uses the keyboard to move object left - right
+       *
+       * @memberof Player
+       */
       public Move(): void {          
         
 

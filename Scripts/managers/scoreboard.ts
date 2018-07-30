@@ -65,10 +65,21 @@ module managers {
             this.HighScoreLabel.text = "High Score: " + this._highScore;
         }
 
+        /**
+         *Getter for score 
+         *
+         * @type {number}
+         * @memberof ScoreBoard
+         */
         get Score():number {
             return this._score;
         }
 
+        /**
+         *Setter for Score
+         *
+         * @memberof ScoreBoard
+         */
         set Score(newValue:number) {
             this._score = newValue;
             this.ScoreLabel.text = "Score: " + this._score;
@@ -79,6 +90,10 @@ module managers {
 
         
         // constructors
+        /**
+         *Creates an instance of ScoreBoard.
+         * @memberof ScoreBoard
+         */
         constructor() {
             this.Start();
         }
@@ -86,6 +101,11 @@ module managers {
         // private methods
 
         // public methods
+        /**
+         *Main method: called after constructor intialisation.
+         *
+         * @memberof ScoreBoard
+         */
         public Start() {
             this._livesLabel = new objects.Label("Lives: 99", "30px", "Dock51", "#FFFF00", 20, 20, false);
             this._scoreLabel = new objects.Label("Score: 99999", "30px", "Dock51", "#FFFF00", 650, 20, false);
@@ -95,6 +115,11 @@ module managers {
             this.Reset();
         }
 
+        /**
+         *Reset is used to reset the score 
+         *
+         * @memberof ScoreBoard
+         */
         public Reset() {
             this.Lives = 5;
             this.Score = 0;
