@@ -8,13 +8,15 @@
     let CurrentScene: objects.Scene;
     let CurrentState: config.Scene;
     let ScoreBoard: managers.ScoreBoard;
-    
     let keyboardManager:managers.Keyboard;
+  
     
     
     let Manifest = [
         {id: "Bullet", src:"/Assets/audio/bullet.mp3"},
         {id: "GameMusic", src:"/Assets/audio/backgroundMusic.wav"},
+        {id: "HygieneFood", src:"/Assets/audio/rightFoodEat.wav"},
+        {id: "HarmfulFood", src:"/Assets/audio/wrongFoodEat.wav"},        
         {id: "StartButton", src:"/Assets/images/StartButton.png"},
         {id: "BackGround", src:"/Assets/images/background.png"},
         {id: "PlayButton", src:"/Assets/images/play.png"},

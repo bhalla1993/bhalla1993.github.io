@@ -14,21 +14,17 @@ namespace managers {
 
             switch(object2.name) {
               case "FoodImg0" || "FoodImg1" || "FoodImg2":
-              //let yaySound = createjs.Sound.play("yay");
-              //yaySound.volume = 0.2;
+              let hygieneFoodSound = createjs.Sound.play("HygieneFood");
+              hygieneFoodSound.volume = 0.2;
               managers.Game.ScoreBoard.Score += 100;
               break;1
 
               case "EnemyImg0":
-              //let thunderSound = createjs.Sound.play("thunder");
-              //thunderSound.volume = 0.2;
+              let harmfulFoodSound = createjs.Sound.play("HarmfulFood");
+              harmfulFoodSound.volume = 0.2;
               managers.Game.ScoreBoard.Lives -= 1;
               break;
           }
-
-          
-            //managers.Game.ScoreBoard.Score += 100;
-            //managers.Game.ScoreBoard.Lives -= 1;
             object2.visible=false;
           }
         }

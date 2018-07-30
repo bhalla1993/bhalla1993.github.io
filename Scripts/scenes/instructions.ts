@@ -13,7 +13,6 @@ module scenes {
             super(assetManager);
             this.Start();
         }
-
         // private methods
 
         // public methods
@@ -26,14 +25,8 @@ module scenes {
             this._instructions+="2. Score\n\n";
             this._instructions+="\t\t\to 100 Points when player eats every single food item(Apple, Grape or Watermelon)\n\n";
             this._instructions+="3. Live(s)\n\n";
-            this._instructions+="\t\t\to Total 5 lives, one life reduced when player eats every mushroom food item\n\n";
-            this._instructions+="\t\t\to When there is no live left, GAME OVER\n\n";
-            
-            
-            
-            
-            
-
+            this._instructions+="\t\t\to Total 5 lives, one life reduced when player eats mushroom food item\n\n";
+            this._instructions+="\t\t\to When there is no life left, GAME OVER\n\n";
             this._instructionText=new objects.Label(this._instructions, "20px","Arial","#FFFFFF",400,280,true);            
             this._instructionText.textBaseline = "alphabetic";
             this.Main();

@@ -24,7 +24,7 @@ module scenes {
 
             this.gameSound = createjs.Sound.play("GameMusic");
             this.gameSound.loop = -1;
-            this.gameSound.volume = 0.0;
+            this.gameSound.volume = 0.1;
 
 
             this._gameNameLabel=new objects.Label("Feeding Fish","70px","Arial","#FFF000",400,100,true);

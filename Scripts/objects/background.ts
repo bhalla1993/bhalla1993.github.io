@@ -14,6 +14,7 @@ module objects{
     private _checkBounds(): void {
         // check top boundary
         if (this.y >= 0) {
+           
           this.Reset();
         }
       }
